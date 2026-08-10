@@ -23,7 +23,7 @@ private:
 
 public:
 
-    static void increment()
+    Student()
     {
         count++;
     }
@@ -40,10 +40,6 @@ int main()
     clearScreen();
 
     Student s1, s2, s3;
-    s1.increment();
-    s2.increment();
-    s3.increment();
-
     Student::counter();
 
     return 0;
