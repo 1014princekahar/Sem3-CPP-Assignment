@@ -9,35 +9,46 @@ using namespace std;
 
 void clearScreen()
 {
-    #ifdef _WIN32
+#ifdef _WIN32
     system("cls");
-    #else
+#else
     system("clear");
-    #endif
+#endif
 }
 
 class Rectangle
 {
 private:
-    float length, breadth;
+    float length, breadth, area;
 
 public:
+    Rectangle() {}
     Rectangle(int length, int breadth)
     {
         this->length = length;
         this->breadth = breadth;
     }
-    float area()
+
+    Rectangle Area()
     {
-        return length * breadth;
+        Rectangle temp(length, breadth);
+
+        temp.area = length * breadth;
+        return temp;
+    }
+
+    float AREA()
+    {
+        return area;
     }
 };
 
 int main()
 {
     clearScreen();
-    Rectangle r1(10, 50);
-    cout << "The Area of Rectangle is " << r1.area() << endl;
+    Rectangle r1(10, 50), r2;
+    r2 = r1.Area();
+    cout << "The Area of Rectangle is " << r2.AREA() << endl;
 
     return 0;
 }
