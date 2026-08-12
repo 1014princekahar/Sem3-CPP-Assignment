@@ -18,9 +18,10 @@ void clearScreen()
 
 class Person
 {
-public:
+protected:
     string name;
     int age;
+public:
 
     Person() {}
     Person(string name, int age)

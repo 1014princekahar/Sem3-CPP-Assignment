@@ -18,8 +18,9 @@ void clearScreen()
 
 class Rectangle
 {
-public:
+protected:
     float length, width;
+public:
     Rectangle() {}
     Rectangle(float l, float b)
     {
