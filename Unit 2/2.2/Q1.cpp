@@ -9,20 +9,55 @@ using namespace std;
 
 void clearScreen()
 {
-    #ifdef _WIN32
+#ifdef _WIN32
     system("cls");
-    #else
+#else
     system("clear");
-    #endif
+#endif
 }
 
-class Calaculator
+class Calculator
 {
-    
+    int a, b, c;
+    float d, e;
+
+public:
+    int add(int x, int y)
+    {
+        a = x;
+        b = y;
+        return a + b;
+    }
+
+    int add(int x, int y, int z)
+    {
+        a = x;
+        b = y;
+        c = z;
+        return a + b + c;
+    }
+
+    float add(float x, float y)
+    {
+        d = x;
+        e = y;
+        return d + e;
+    }
 };
 
 int main()
 {
     clearScreen();
+    
+    Calculator c;
+
+    cout << "Addition of two integers: "
+         << c.add(10, 20) << endl;
+
+    cout << "Addition of three integers: "
+         << c.add(10, 20, 30) << endl;
+
+    cout << "Addition of two floating-point numbers: "
+         << c.add(10.2f, 20.3f) << endl;
     return 0;
 }
