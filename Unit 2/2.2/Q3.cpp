@@ -1,6 +1,6 @@
 /*
 
-Write a C++ program to create a class Number with a private integer data member. Overload the ++ operator (both prefix and postfix) to increment the value.
+Write a C++ program to demonstrate unary increment (++) operator overloading by creating a class Counter that increments the value of an object using the overloaded operator.
 
 */
 
@@ -16,19 +16,14 @@ void clearScreen()
     #endif
 }
 
-class Number
+class Counter
 {
     int count = 0;
 
 public:
     void operator ++ ()
     {
-        count++; // prefer prefix 
-    }
-
-    void operator ++ (int) 
-    {
-        count++; // prefer postfix 
+        count++;
     }
     
     void display()
@@ -41,10 +36,8 @@ int main()
 {
     clearScreen();
 
-    Number n;
-    ++n;
-    n.display();
-    n++;
-    n.display();
+    Counter c;
+    ++c;
+    c.display();
     return 0;
 }
